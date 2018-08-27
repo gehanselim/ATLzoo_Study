@@ -1,0 +1,3069 @@
+<html>
+<head>
+<style type="text/css">
+body {font-family:Arial}
+table {background-color:white; border:0px solid white; width:95%; margin-left:auto; margin-right: auto}
+td {background-color:#b0c4de; padding:16px; border:4px solid white}
+pre {background-color:white; padding:4px}
+</style>
+<title>
+NiCad Clone Report
+</title>
+</head>
+<body>
+<h2>
+NiCad Clone Report
+</h2>
+System: ATL_Zoo
+<br>
+<br>Granularity: blocks-blind
+<br>Max difference threshold: 30%
+<br>Clone size: 1 - 5000 lines
+<br>
+<br>Total blocks-blind: 166
+<br>Clone pairs found: 1250
+<br>
+<br>LCS compares: 2550 &nbsp;&nbsp;&nbsp; CPU time: 0 min 0.43 sec
+<br>
+<br>Number of  classes: 42
+<br>
+<h3>Clone class 1, 1 fragments, nominal size 217 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 42 - 124 of ATL/ATL_Zoo/KM32Measure/KM32Measure/transformations/KM32Measure.atl
+<pre>
+	do {
+		thisModule.root &lt;- root;
+		
+		if ((thisModule.measureLevel = #package) or
+			(thisModule.measureLevel = #class)) {
+			-- ==================================================
+			-- MOOD Metrics : Intra-Specification Level Metrics =
+			-- ==================================================
+			root.categories &lt;-
+				thisModule.Category('MOOD','Metrics for Object-Oriented Design');
+			thisModule.Metric('MOOD','AIF','Attributes Inheritance Factor');
+			thisModule.Metric('MOOD','RIF','References Inheritance Factor');
+			thisModule.Metric('MOOD','CCF','Class Coupling Factor');
+			thisModule.Metric('MOOD','ICF','Internal Coupling Factor');
+				
+			-- ===================================================
+			-- MOOD2 Metrics : Intra-Specification Level Metrics =
+			-- ===================================================
+			root.categories &lt;-
+				thisModule.Category('MOOD2',
+					'Metrics for Object-Oriented Design 2');
+			thisModule.Metric('MOOD2','IIF','Internal Inheritance Factor');
+		}
+		
+		if (thisModule.measureLevel = #class) {
+			-- ===============
+			-- MOOSE Metrics =
+			-- ===============
+			root.categories &lt;-
+				thisModule.Category('MOOSE',
+				'Metrics for Object-Oriented Software Engineering');
+			thisModule.Metric('MOOSE','WRC','Weighted References per Class');
+			thisModule.Metric('MOOSE','DIT','Depth of Inheritance Tree');
+			thisModule.Metric('MOOSE','NOC','Number of Children');
+			thisModule.Metric('MOOSE','CBO','Coupling Between Objects');
+		
+			-- ================
+			-- EMOOSE Metrics =
+			-- ================
+			root.categories &lt;-
+				thisModule.Category('EMOOSE','Extended MOOSE');
+			thisModule.Metric('EMOOSE','SIZE2','Number of local Attributes ' +
+				'and References defined in the Class');
+		}
+		
+		if ((thisModule.measureLevel = #package) or
+			(thisModule.measureLevel = #class)) {
+			-- ===============
+			-- QMOOD Metrics =
+			-- ===============
+			root.categories &lt;-
+				thisModule.Category('QMOOD',
+				'Quality Model for Object-Oriented Design');		
+			thisModule.Metric('QMOOD','DSC','Design Size in Classes');
+			thisModule.Metric('QMOOD','NOH','Number of Hierarchies');
+			thisModule.Metric('QMOOD','NIC','Number of Independent Classes');
+			thisModule.Metric('QMOOD','NSI','Number of Single Inheritance');
+			thisModule.Metric('QMOOD','NMI','Number of Multiple Inheritance');
+			thisModule.Metric('QMOOD','NNC','Number of Internal Classes');
+			thisModule.Metric('QMOOD','NAC','Number of Abstract Classes');
+			thisModule.Metric('QMOOD','NLC','Number of Leaf Classes');
+			thisModule.Metric('QMOOD','ADI','Average Depth of Inheritance');
+			thisModule.Metric('QMOOD','AWI','Average Width of Inheritance');
+			thisModule.Metric('QMOOD','ANA','Average Number of Ancestors');
+		}
+			
+		if (thisModule.measureLevel = #class) {			
+			thisModule.Metric('QMOOD','MAA','Measure of Attribute Abstraction');
+			thisModule.Metric('QMOOD','MRA','Measure of Reference Abstraction');
+			thisModule.Metric('QMOOD','MOA','Measure of Aggregation');
+			thisModule.Metric('QMOOD','MRM','Modeled Relationship Measure');
+			thisModule.Metric('QMOOD','NOA','Number of Ancestors');
+			thisModule.Metric('QMOOD','NOR','Number of References');
+			thisModule.Metric('QMOOD','NOD','Number of Attributes');
+			thisModule.Metric('QMOOD','NAD','Number of Abstract Data Types');
+			thisModule.Metric('QMOOD','CSM','Class Size Metric');
+			thisModule.Metric('QMOOD','DCC','Direct Class Coupling');
+			thisModule.Metric('QMOOD','MCC','Maximum Class Coupling');
+			thisModule.Metric('QMOOD','DAC','Direct Attribute Based Coupling');
+			thisModule.Metric('QMOOD','DRC','Direct Reference Based Coupling');
+			thisModule.Metric('QMOOD','CCD','Class Complexity Based on Data');
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 2, 3 fragments, nominal size 101 lines, similarity 70%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 146 - 180 of ATL/ATL_Zoo/KM32Measure/KM32Measure/transformations/KM32Measure.atl
+<pre>
+	do {
+		if (ne.package.oclIsUndefined()) {
+			thisModule.root.measureSets &lt;- ms;
+		}
+		
+		if (ne.CN() &gt; 0) {
+			-- ==================================================
+			-- MOOD Metrics : Intra-Specification Level Metrics =
+			-- ==================================================
+			ms.measures &lt;- thisModule.PercentageMeasure('AIF',ne.AIF());
+			ms.measures &lt;- thisModule.PercentageMeasure('RIF',ne.RIF());
+			ms.measures &lt;- thisModule.PercentageMeasure('CCF',ne.CCF());
+			ms.measures &lt;- thisModule.PercentageMeasure('ICF',ne.ICF());
+				
+			-- =============================================================
+			-- MOOD2 Metrics : Intra and Inter-Specification Level Metrics =
+			-- =============================================================
+			ms.measures &lt;- thisModule.PercentageMeasure('IIF',ne.IIF());
+		
+			-- ===============
+			-- QMOOD Metrics =
+			-- ===============
+			ms.measures &lt;- thisModule.IntegerMeasure('DSC',ne.DSC());
+			ms.measures &lt;- thisModule.IntegerMeasure('NOH',ne.NOH());
+			ms.measures &lt;- thisModule.IntegerMeasure('NIC',ne.NIC());
+			ms.measures &lt;- thisModule.IntegerMeasure('NSI',ne.NSI());
+			ms.measures &lt;- thisModule.IntegerMeasure('NMI',ne.NMI());
+			ms.measures &lt;- thisModule.IntegerMeasure('NNC',ne.NNC());
+			ms.measures &lt;- thisModule.IntegerMeasure('NAC',ne.NAC());
+			ms.measures &lt;- thisModule.IntegerMeasure('NLC',ne.NLC());
+			ms.measures &lt;- thisModule.DoubleMeasure('ADI',ne.ADI());
+			ms.measures &lt;- thisModule.DoubleMeasure('AWI',ne.AWI());
+			ms.measures &lt;- thisModule.DoubleMeasure('ANA',ne.ANA());
+		}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 179 - 217 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/UML22Measure.atl
+<pre>
+	do {
+		if (ne.oclIsTypeOf(UML2!Model)) {
+			thisModule.root.measureSets &lt;- ms;
+		}
+		
+		if (ne.CN() &gt; 0) {
+			-- ==================================================
+			-- MOOD Metrics : Intra-Specification Level Metrics =
+			-- ==================================================
+			ms.measures &lt;- thisModule.PercentageMeasure('AIF',ne.AIF());
+			ms.measures &lt;- thisModule.PercentageMeasure('OIF',ne.OIF());
+			ms.measures &lt;- thisModule.PercentageMeasure('AHF',ne.AHF());
+			ms.measures &lt;- thisModule.PercentageMeasure('OHF',ne.OHF());
+			ms.measures &lt;- thisModule.PercentageMeasure('BPF',ne.BPF());
+			ms.measures &lt;- thisModule.PercentageMeasure('CCF',ne.CCF());
+			ms.measures &lt;- thisModule.PercentageMeasure('ICF',ne.ICF());
+				
+			-- =============================================================
+			-- MOOD2 Metrics : Intra and Inter-Specification Level Metrics =
+			-- =============================================================
+			ms.measures &lt;- thisModule.PercentageMeasure('IIF',ne.IIF());
+			ms.measures &lt;- thisModule.PercentageMeasure('AHEF',ne.AHEF());
+			ms.measures &lt;- thisModule.PercentageMeasure('OHEF',ne.OHEF());
+		
+			-- ===============
+			-- QMOOD Metrics =
+			-- ===============
+			ms.measures &lt;- thisModule.IntegerMeasure('DSC',ne.DSC());
+			ms.measures &lt;- thisModule.IntegerMeasure('NOH',ne.NOH());
+			ms.measures &lt;- thisModule.IntegerMeasure('NIC',ne.NIC());
+			ms.measures &lt;- thisModule.IntegerMeasure('NSI',ne.NSI());
+			ms.measures &lt;- thisModule.IntegerMeasure('NNC',ne.NNC());
+			ms.measures &lt;- thisModule.IntegerMeasure('NAC',ne.NAC());
+			ms.measures &lt;- thisModule.IntegerMeasure('NLC',ne.NLC());
+			ms.measures &lt;- thisModule.DoubleMeasure('ADI',ne.ADI());
+			ms.measures &lt;- thisModule.DoubleMeasure('AWI',ne.AWI());
+			ms.measures &lt;- thisModule.DoubleMeasure('ANA',ne.ANA());
+		}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 196 - 227 of ATL/ATL_Zoo/KM32Measure/KM32Measure/transformations/KM32Measure.atl
+<pre>
+	do {
+		-- ===============
+		-- MOOSE Metrics =
+		-- ===============
+		ms.measures &lt;- thisModule.IntegerMeasure('WRC',ne.WRC());
+		ms.measures &lt;- thisModule.IntegerMeasure('DIT',ne.DIT());
+		ms.measures &lt;- thisModule.IntegerMeasure('NOC',ne.NOC());
+		ms.measures &lt;- thisModule.IntegerMeasure('CBO',ne.CBO());
+	
+		-- ================
+		-- EMOOSE Metrics =
+		-- ================
+		ms.measures &lt;- thisModule.IntegerMeasure('SIZE2',ne.SIZE2());
+	
+		-- ===============
+		-- QMOOD Metrics =
+		-- ===============
+		ms.measures &lt;- thisModule.PercentageMeasure('MAA',ne.MAA());
+		ms.measures &lt;- thisModule.PercentageMeasure('MRA',ne.MRA());
+		ms.measures &lt;- thisModule.IntegerMeasure('MOA',ne.MOA());
+		ms.measures &lt;- thisModule.IntegerMeasure('MRM',ne.MRM());
+		ms.measures &lt;- thisModule.IntegerMeasure('NOA',ne.NOA());
+		ms.measures &lt;- thisModule.IntegerMeasure('NOR',ne.NOR());
+		ms.measures &lt;- thisModule.IntegerMeasure('NOD',ne.NOD());
+		ms.measures &lt;- thisModule.IntegerMeasure('NAD',ne.NAD());
+		ms.measures &lt;- thisModule.IntegerMeasure('CSM',ne.CSM());
+		ms.measures &lt;- thisModule.IntegerMeasure('DCC',ne.DCC());
+		ms.measures &lt;- thisModule.IntegerMeasure('MCC',ne.MCC());
+		ms.measures &lt;- thisModule.IntegerMeasure('DAC',ne.DAC());
+		ms.measures &lt;- thisModule.IntegerMeasure('DRC',ne.DRC());
+		ms.measures &lt;- thisModule.IntegerMeasure('CCD',ne.CCD());
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 3, 43 fragments, nominal size 4 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 239 - 241 of ATL/ATL_Zoo/KM32Measure/KM32Measure/transformations/KM32Measure.atl
+<pre>
+	do {
+		cat;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 554 - 556 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {
+		td;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 157 - 159 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {			
+		html;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 586 - 588 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+    do {
+        cdata;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 599 - 601 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+    do {
+        pcdata;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 179 - 181 of ATL/ATL_Zoo/Table2TabularHTML/Table2TabularHTML/transformations/HTML2XML.atl
+<pre>
+	do {
+		text;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 353 - 355 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+    do {
+        howtoDiv;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 128 - 130 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/Measure2Table.atl
+<pre>
+	do {
+		cell;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 163 - 165 of ATL/ATL_Zoo/Table2TabularHTML/Table2TabularHTML/transformations/HTML2XML.atl
+<pre>
+	do {
+		attr;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 115 - 117 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/Measure2Table.atl
+<pre>
+	do {
+		row;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 102 - 104 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/Measure2Table.atl
+<pre>
+	do {
+		valueRow;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 87 - 89 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/Measure2Table.atl
+<pre>
+	do {
+		hdrRow;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 453 - 455 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {
+		th;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 424 - 426 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {
+		tr;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 179 - 181 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/HTML2XML.atl
+<pre>
+	do {
+		text;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 163 - 165 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/HTML2XML.atl
+<pre>
+	do {
+		attr;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 989 - 991 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+	do {
+		text;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 973 - 975 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+	do {
+		attr;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 960 - 962 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+	do {
+		attr;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 289 - 291 of ATL/ATL_Zoo/KM32Measure/KM32Measure/transformations/KM32Measure.atl
+<pre>
+	do {
+		meas;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 160 - 160 of ATL/ATL_Zoo/UMLSD2STMD/UMLSD2STMD/transformations/addHierarchy.atl
+<pre>
+	do{cs;}
+</pre>
+</td></tr>
+<tr><td>
+Lines 303 - 305 of ATL/ATL_Zoo/KM32Measure/KM32Measure/transformations/KM32Measure.atl
+<pre>
+	do {
+		meas;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 299 - 301 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+    do {
+        br;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 136 - 138 of ATL/ATL_Zoo/VisualRepCodeClone/CodeClone/Transformations/SVG2XML.atl
+<pre>
+	do {
+		attr;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 317 - 319 of ATL/ATL_Zoo/KM32Measure/KM32Measure/transformations/KM32Measure.atl
+<pre>
+	do {
+		meas;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 290 - 292 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/UML22Measure.atl
+<pre>
+	do {
+		cat;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 235 - 237 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {		
+		embeddedScript;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 288 - 290 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+    do {
+        li;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 218 - 220 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {		
+		script;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 275 - 277 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {
+		acronym;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 258 - 260 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+    do {        
+        noscript;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 198 - 200 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {
+		style;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 354 - 356 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/UML22Measure.atl
+<pre>
+	do {
+		meas;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 340 - 342 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/UML22Measure.atl
+<pre>
+	do {
+		meas;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 368 - 370 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/UML22Measure.atl
+<pre>
+	do {
+		meas;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 299 - 301 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/SVG2XML.atl
+<pre>
+	do {
+		attr;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 128 - 130 of ATL/ATL_Zoo/Measure2Table/Measure2Table/transformations/Measure2Table.atl
+<pre>
+	do {
+		cell;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 115 - 117 of ATL/ATL_Zoo/Measure2Table/Measure2Table/transformations/Measure2Table.atl
+<pre>
+	do {
+		row;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 102 - 104 of ATL/ATL_Zoo/Measure2Table/Measure2Table/transformations/Measure2Table.atl
+<pre>
+	do {
+		valueRow;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 87 - 89 of ATL/ATL_Zoo/Measure2Table/Measure2Table/transformations/Measure2Table.atl
+<pre>
+	do {
+		hdrRow;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 525 - 527 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {
+		th;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 181 - 183 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {
+		link;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 387 - 389 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {
+		table;
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 4, 4 fragments, nominal size 7 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 256 - 259 of ATL/ATL_Zoo/KM32Measure/KM32Measure/transformations/KM32Measure.atl
+<pre>
+	do {
+		thisModule.MetricByName &lt;-
+			thisModule.MetricByName.including(metric.name,metric);
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 325 - 328 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/UML22Measure.atl
+<pre>
+	do {
+		thisModule.MetricByName &lt;-
+			thisModule.MetricByName.including(metric.name,metric);
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 307 - 310 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/UML22Measure.atl
+<pre>
+	do {
+		thisModule.MetricByName &lt;-
+			thisModule.MetricByName.including(metric.name,metric);
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 274 - 277 of ATL/ATL_Zoo/KM32Measure/KM32Measure/transformations/KM32Measure.atl
+<pre>
+	do {
+		thisModule.MetricByName &lt;-
+			thisModule.MetricByName.including(metric.name,metric);
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 5, 5 fragments, nominal size 9 lines, similarity 70%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 80 - 85 of ATL/ATL_Zoo/MeasuringModelRepositories/MeasuringModelRepositories/Transformations/Table2SVGPieChart.atl
+<pre>
+	do {
+		thisModule.svgFile &lt;- svgFile;
+		for (table in thisModule.allValidTables) {
+			thisModule.Table2PieChart(table);
+		}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 58 - 63 of ATL/ATL_Zoo/MeasuringModelRepositories/MeasuringModelRepositories/Transformations/Table2SVGBarChart.atl
+<pre>
+	do {
+		thisModule.svgFile &lt;- svgFile;
+		for (table in thisModule.allValidTables) {
+			thisModule.Table2BarChart(table);
+		}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 76 - 80 of ATL/ATL_Zoo/UML2OWL/UML2OWL/OWL/XmlSyntax/OWL2XML.atl
+<pre>
+	do {
+		for ( i in o.OWLImports ) {
+			thisModule.addImports( o, i );
+		}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 594 - 598 of ATL/ATL_Zoo/UML2OWL/UML2OWL/UML2OWL.atl
+<pre>
+	do {
+		for( i in s.value ) {
+			thisModule.createStatement( s, i );
+		}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 76 - 80 of ATL/ATL_Zoo/KM32OWL/KM32OWL/Transformations/OWL2XML.atl
+<pre>
+	do {
+		for ( i in o.OWLImports ) {
+			thisModule.addImports( o, i );
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 6, 4 fragments, nominal size 9 lines, similarity 72%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 141 - 145 of ATL/ATL_Zoo/MeasuringModelRepositories/MeasuringModelRepositories/Transformations/Table2SVGPieChart.atl
+<pre>
+	do {
+		thisModule.svgFile.tag.children &lt;- g;
+		--@comments initialise rotation angle
+		thisModule.angle &lt;- 0;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 260 - 266 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/Table2SVGPieChart.atl
+<pre>
+	do {
+		thisModule.prevWidth &lt;-
+			thisModule.prevWidth + boundingBoxSize.width + thisModule.margin;
+		thisModule.svgFile.tag.children &lt;- g;
+		--@comments initialise rotation angle
+		thisModule.prevAngle &lt;- 0;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 222 - 226 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/Table2SVGBarChart.atl
+<pre>
+	do {
+		thisModule.prevWidth &lt;- thisModule.prevWidth +
+			thisModule.margin +	boundingBoxSize.width;
+		thisModule.svgFile.tag.children &lt;- g;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 132 - 135 of ATL/ATL_Zoo/MeasuringModelRepositories/MeasuringModelRepositories/Transformations/Table2SVGBarChart.atl
+<pre>
+	do {
+		thisModule.prevRectWidth &lt;- thisModule.prevRectWidth + rectSize.width + 5;
+		thisModule.svgFile.tag.children &lt;- g;
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 7, 1 fragments, nominal size 6 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 191 - 194 of ATL/ATL_Zoo/MeasuringModelRepositories/MeasuringModelRepositories/Transformations/Table2SVGPieChart.atl
+<pre>
+	do {
+		--@comments add the angle value of the new sector
+		thisModule.angle &lt;- rotate.angle + 3.6*row.cells-&gt;at(2).content.toReal();
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 8, 1 fragments, nominal size 142 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 73 - 136 of ATL/ATL_Zoo/MeasuringModelRepositories/MeasuringModelRepositories/Transformations/Measure2Table.atl
+<pre>
+	do {
+		--@comments creates tables for each kind of non empty measure set [Metamodel][Zoo][TabularHTML]
+		if allMetamodelMeasuresSets-&gt;notEmpty()
+			then thisModule.AllMeasureSet2Table(allMetamodelMeasuresSets)
+			else OclUndefined
+		endif;
+		if allPackageMeasuresSets-&gt;notEmpty()
+			then thisModule.AllMeasureSet2Table(allPackageMeasuresSets)
+			else OclUndefined
+		endif;
+		if allClassMeasuresSets-&gt;notEmpty()
+			then thisModule.AllMeasureSet2Table(allClassMeasuresSets)
+			else OclUndefined
+		endif;
+		if allAttributeMeasuresSets-&gt;notEmpty()
+			then thisModule.AllMeasureSet2Table(allAttributeMeasuresSets)
+			else OclUndefined
+		endif;
+		--@comments creates tables for metrics on one metamodel and for SVG bar chart representation [Metaamodel][SVGBarChart]
+		for (pkgMeasSet in allPackageMeasuresSets-&gt;select(pkgMeasSet|pkgMeasSet.classMeasureSets-&gt;notEmptyy())) {
+			thisModule.MeasureSets2SVGBarChart(pkgMeasSet.classMeasureSets,'TNAI');
+			thisModule.MeasureSets2SVGBarChart(pkgMeasSet.classMeasureSets,'TNR');
+			thisModule.MeasureSets2SVGBarChart(pkgMeasSet.classMeasureSets,'TNRI');
+			thisModule.MeasureSets2SVGBarChart(pkgMeasSet.classMeasureSets,'AIF');
+			thisModule.MeasureSets2SVGBarChart(pkgMeasSet.classMeasureSets,'DIT');
+			thisModule.MeasureSets2SVGBarChart(pkgMeasSet.classMeasureSets,'NOC');
+		}
+		--@comments creates tables for metrics on one metamodel and for SVG pie chart representation [Metaamodel][SVGPieChart]
+		for (pkgMeasSet in allPackageMeasuresSets) {
+			if pkgMeasSet.canCreatePieChart('TNA')
+				then thisModule.MeasureSets2SVGPieChart(pkgMeasSet.classMeasureSets,'TNA')
+				else OclUndefined
+			endif;
+			if pkgMeasSet.canCreatePieChart('TNAI')
+				then thisModule.MeasureSets2SVGPieChart(pkgMeasSet.classMeasureSets,'TNAI')
+				else OclUndefined
+			endif;
+			if pkgMeasSet.canCreatePieChart('TNR')
+				then thisModule.MeasureSets2SVGPieChart(pkgMeasSet.classMeasureSets,'TNR')
+				else OclUndefined
+			endif;
+			if pkgMeasSet.canCreatePieChart('TNRI')
+				then thisModule.MeasureSets2SVGPieChart(pkgMeasSet.classMeasureSets,'TNRI')
+				else OclUndefined
+			endif;
+			if pkgMeasSet.canCreatePieChart('AIF')
+				then thisModule.MeasureSets2SVGPieChart(pkgMeasSet.classMeasureSets,'AIF')
+				else OclUndefined
+			endif;
+			if pkgMeasSet.canCreatePieChart('DIT')
+				then thisModule.MeasureSets2SVGPieChart(pkgMeasSet.classMeasureSets,'DIT')
+				else OclUndefined
+			endif;
+			if pkgMeasSet.canCreatePieChart('NOC')
+				then thisModule.MeasureSets2SVGPieChart(pkgMeasSet.classMeasureSets,'NOC')
+				else OclUndefined
+			endif;
+		}
+		--@comments creates tables for metrics on the entire zoo of metamodels and for SVG bar and pie chaart representation [Zoo][SVGBarChart][SVGPieChart]
+		if allPackageMeasuresSets-&gt;isEmpty()
+			then thisModule.TablesForEntireZoo(allMetamodelMeasuresSets)
+			else OclUndefined
+		endif;
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 9, 1 fragments, nominal size 74 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 155 - 176 of ATL/ATL_Zoo/MeasuringModelRepositories/MeasuringModelRepositories/Transformations/Measure2Table.atl
+<pre>
+	do {
+		--@comments creates tables for metrics on the entire zoo of metamodels and for SVG bar chart repreesentation [Zoo][SVGBarChart]
+		thisModule.MeasureSets2SVGBarChart(allMmMeasSet,'TNP');
+		thisModule.MeasureSets2SVGBarChart(allMmMeasSet,'TNC');
+		thisModule.MeasureSets2SVGBarChart(allMmMeasSet,'TNA');
+		thisModule.MeasureSets2SVGBarChart(allMmMeasSet,'TNAI');
+		thisModule.MeasureSets2SVGBarChart(allMmMeasSet,'TNR');
+		thisModule.MeasureSets2SVGBarChart(allMmMeasSet,'TNRI');
+		thisModule.MeasureSets2SVGBarChart(allMmMeasSet,'AIF');
+		thisModule.MeasureSets2SVGBarChart(allMmMeasSet,'DIT');
+		thisModule.MeasureSets2SVGBarChart(allMmMeasSet,'NOC');
+		--@comments creates tables for metrics on the entire zoo of metamodels and for SVG pie chart repreesentation [Zoo][SVGPieChart]
+		thisModule.MeasureSets2SVGPieChart(allMmMeasSet,'TNP');
+		thisModule.MeasureSets2SVGPieChart(allMmMeasSet,'TNC');
+		thisModule.MeasureSets2SVGPieChart(allMmMeasSet,'TNA');
+		thisModule.MeasureSets2SVGPieChart(allMmMeasSet,'TNAI');
+		thisModule.MeasureSets2SVGPieChart(allMmMeasSet,'TNR');
+		thisModule.MeasureSets2SVGPieChart(allMmMeasSet,'TNRI');
+		thisModule.MeasureSets2SVGPieChart(allMmMeasSet,'AIF');
+		thisModule.MeasureSets2SVGPieChart(allMmMeasSet,'DIT');
+		thisModule.MeasureSets2SVGPieChart(allMmMeasSet,'NOC');
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 10, 2 fragments, nominal size 27 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 46 - 62 of ATL/ATL_Zoo/Measure2Table/Measure2Table/transformations/Measure2Table.atl
+<pre>
+	do {
+		if (allMetamodelMeasuresSets-&gt;notEmpty()) {
+			thisModule.AllMeasureSet2Table(allMetamodelMeasuresSets);
+		}
+		if (allModelMeasuresSets-&gt;notEmpty()) {
+			thisModule.AllMeasureSet2Table(allModelMeasuresSets);
+		}
+		if (allPackageMeasuresSets-&gt;notEmpty()) {
+			thisModule.AllMeasureSet2Table(allPackageMeasuresSets);
+		}
+		if (allInterfaceMeasuresSets-&gt;notEmpty()) {
+			thisModule.AllMeasureSet2Table(allInterfaceMeasuresSets);
+		}
+		if (allClassMeasuresSets-&gt;notEmpty()) {
+			thisModule.AllMeasureSet2Table(allClassMeasuresSets);
+		}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 46 - 62 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/Measure2Table.atl
+<pre>
+	do {
+		if (allMetamodelMeasuresSets-&gt;notEmpty()) {
+			thisModule.AllMeasureSet2Table(allMetamodelMeasuresSets);
+		}
+		if (allModelMeasuresSets-&gt;notEmpty()) {
+			thisModule.AllMeasureSet2Table(allModelMeasuresSets);
+		}
+		if (allPackageMeasuresSets-&gt;notEmpty()) {
+			thisModule.AllMeasureSet2Table(allPackageMeasuresSets);
+		}
+		if (allInterfaceMeasuresSets-&gt;notEmpty()) {
+			thisModule.AllMeasureSet2Table(allInterfaceMeasuresSets);
+		}
+		if (allClassMeasuresSets-&gt;notEmpty()) {
+			thisModule.AllMeasureSet2Table(allClassMeasuresSets);
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 11, 1 fragments, nominal size 21 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 90 - 100 of ATL/ATL_Zoo/UML2KM3/UML2ClassDiagram_to_KM3/Transformations/UML2KM3.atl
+<pre>
+	do {	
+		if(Set {'Boolean', 'Integer', 'String'}-&gt;includes(s.type.name)) {
+			if(thisModule.dataTypeByName.containsKey(s.type.name)) {
+				thisModule.dataTypeByName.get(s.type.name);
+			} else {
+				thisModule.dataType(s);
+			}
+		} else {
+			s.type;
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 12, 1 fragments, nominal size 9 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 109 - 112 of ATL/ATL_Zoo/UML2KM3/UML2ClassDiagram_to_KM3/Transformations/UML2KM3.atl
+<pre>
+	do {
+		thisModule.dataTypeByName &lt;- thisModule.dataTypeByName.including(s.type.name, t);
+		t;
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 13, 5 fragments, nominal size 55 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 23 - 50 of ATL/ATL_Zoo/RemovingManyManyAssociation/without_context/Removing.atl
+<pre>
+	do {
+		if (not thisModule.assoMap.get(ref2).oclIsUndefined()) {
+			if (thisModule.assoMap.get(ref2)-&gt;includes(ref1)) {
+				true;
+			}
+			else {
+			    if (not thisModule.assoMap.get(ref1).oclIsUndefined()) {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1,thisModule.assoMap.get(ref1)-&gt;includingg(ref2));
+					false;
+			    }
+				else {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1, Sequence{ref2});
+					false;
+				}
+			}
+		}
+		else  {
+				if (not thisModule.assoMap.get(ref1).oclIsUndefined()) {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1,thisModule.assoMap.get(ref1)-&gt;includingg(ref2));
+					false;
+			    }
+				else {	
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1, Sequence{ref2});
+					false;
+				}
+		}
+		
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 24 - 51 of ATL/ATL_Zoo/MergingPartialClasses/without_context/MergingPartialClasses.atl
+<pre>
+	do {
+		if (not thisModule.assoMap.get(ref2).oclIsUndefined()) {
+			if (thisModule.assoMap.get(ref2)-&gt;includes(ref1)) {
+				true;
+			}
+			else {
+			    if (not thisModule.assoMap.get(ref1).oclIsUndefined()) {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1,thisModule.assoMap.get(ref1)-&gt;includingg(ref2));
+					false;
+			    }
+				else {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1, Sequence{ref2});
+					false;
+				}
+			}
+		}
+		else  {
+				if (not thisModule.assoMap.get(ref1).oclIsUndefined()) {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1,thisModule.assoMap.get(ref1)-&gt;includingg(ref2));
+					false;
+			    }
+				else {	
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1, Sequence{ref2});
+					false;
+				}
+		}
+		
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 18 - 45 of ATL/ATL_Zoo/RedundantClassRemovable/without_context/RedundantClassRemovable.atl
+<pre>
+	do {
+		if (not thisModule.assoMap.get(ref2).oclIsUndefined()) {
+			if (thisModule.assoMap.get(ref2)-&gt;includes(ref1)) {
+				true;
+			}
+			else {
+			    if (not thisModule.assoMap.get(ref1).oclIsUndefined()) {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1,thisModule.assoMap.get(ref1)-&gt;includingg(ref2));
+					false;
+			    }
+				else {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1, Sequence{ref2});
+					false;
+				}
+			}
+		}
+		else  {
+				if (not thisModule.assoMap.get(ref1).oclIsUndefined()) {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1,thisModule.assoMap.get(ref1)-&gt;includingg(ref2));
+					false;
+			    }
+				else {	
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1, Sequence{ref2});
+					false;
+				}
+		}
+		
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 23 - 50 of ATL/ATL_Zoo/RemovingManyManyAssociation/with_context/Removing.atl
+<pre>
+	do {
+		if (not thisModule.assoMap.get(ref2).oclIsUndefined()) {
+			if (thisModule.assoMap.get(ref2)-&gt;includes(ref1)) {
+				true;
+			}
+			else {
+			    if (not thisModule.assoMap.get(ref1).oclIsUndefined()) {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1,thisModule.assoMap.get(ref1)-&gt;includingg(ref2));
+					false;
+			    }
+				else {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1, Sequence{ref2});
+					false;
+				}
+			}
+		}
+		else  {
+				if (not thisModule.assoMap.get(ref1).oclIsUndefined()) {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1,thisModule.assoMap.get(ref1)-&gt;includingg(ref2));
+					false;
+			    }
+				else {	
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1, Sequence{ref2});
+					false;
+				}
+		}
+		
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 21 - 48 of ATL/ATL_Zoo/MergingPartialClasses/with_context/MergingPartialClasses.atl
+<pre>
+	do {
+		if (not thisModule.assoMap.get(ref2).oclIsUndefined()) {
+			if (thisModule.assoMap.get(ref2)-&gt;includes(ref1)) {
+				true;
+			}
+			else {
+			    if (not thisModule.assoMap.get(ref1).oclIsUndefined()) {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1,thisModule.assoMap.get(ref1)-&gt;includingg(ref2));
+					false;
+			    }
+				else {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1, Sequence{ref2});
+					false;
+				}
+			}
+		}
+		else  {
+				if (not thisModule.assoMap.get(ref1).oclIsUndefined()) {
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1,thisModule.assoMap.get(ref1)-&gt;includingg(ref2));
+					false;
+			    }
+				else {	
+					thisModule.assoMap &lt;- thisModule.assoMap.including(ref1, Sequence{ref2});
+					false;
+				}
+		}
+		
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 14, 6 fragments, nominal size 5 lines, similarity 80%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 34 - 36 of ATL/ATL_Zoo/Table2TabularHTML/Table2TabularHTML/transformations/Table2TabularHTML.atl
+<pre>
+	do {
+		thisModule.html &lt;- html;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 53 - 55 of ATL/ATL_Zoo/Table2TabularHTML/Table2TabularHTML/transformations/Table2TabularHTML.atl
+<pre>
+	do {
+		thisModule.html.body.bodyElements &lt;- tab;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 364 - 367 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/Table2SVGPieChart.atl
+<pre>
+	do {
+		--@comments Adds the angle value of the new sector.
+		thisModule.prevAngle &lt;- sectorRotate.angle + 3.6 * value;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 14 - 16 of ATL/ATL_Zoo/EMF2KM3/EMF2KM3/EMF2KM3.atl
+<pre>
+	do {
+		thisModule.metamodel &lt;- t;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 34 - 36 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/Table2TabularHTML.atl
+<pre>
+	do {
+		thisModule.html &lt;- html;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 53 - 55 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/Table2TabularHTML.atl
+<pre>
+	do {
+		thisModule.html.body.bodyElements &lt;- tab;
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 15, 3 fragments, nominal size 9 lines, similarity 88%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 137 - 141 of ATL/ATL_Zoo/Table2TabularHTML/Table2TabularHTML/transformations/HTML2XML.atl
+<pre>
+	do {
+		if (not html.align.oclIsUndefined()) {
+			xml.children &lt;- thisModule.Attribute('align', html.align);
+		}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 82 - 86 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/SVG2XML.atl
+<pre>
+	do {
+		if (not svg.viewBox.oclIsUndefined()) {
+			root.children &lt;- thisModule.Attribute('viewBox', svg.viewBox);
+		}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 137 - 141 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/HTML2XML.atl
+<pre>
+	do {
+		if (not html.align.oclIsUndefined()) {
+			xml.children &lt;- thisModule.Attribute('align', html.align);
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 16, 1 fragments, nominal size 16 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 84 - 91 of ATL/ATL_Zoo/VisualRepCodeClone/CodeClone/Transformations/SVG2XML.atl
+<pre>
+	do {
+		if (not t.fill.oclIsUndefined()) {
+			elmt.children &lt;- thisModule.Attribute('fill', t.fill);
+		}
+		if (not t.font_family.oclIsUndefined()) {
+			elmt.children &lt;- thisModule.Attribute('font-family', t.font_family);
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 17, 1 fragments, nominal size 44 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 106 - 126 of ATL/ATL_Zoo/VisualRepCodeClone/CodeClone/Transformations/SVG2XML.atl
+<pre>
+	do {
+		
+		if (not r.rx.oclIsUndefined()) {
+			elmt.children &lt;- thisModule.Attribute('rx', r.rx -&gt; toString());
+		}
+		if (not r.ry.oclIsUndefined()) {
+			elmt.children &lt;- thisModule.Attribute('ry', r.ry -&gt; toString());
+		}
+		if (not r.stroke_width.oclIsUndefined()) {
+			elmt.children &lt;- thisModule.Attribute('stroke-width', r.stroke_width -&gt; toString());
+		}
+		if (not r.stroke.oclIsUndefined()) {
+			elmt.children &lt;- thisModule.Attribute('stroke', r.stroke);
+		} 
+		if (not r.opacity.oclIsUndefined()) {
+			elmt.children &lt;- thisModule.Attribute('opacity', r.opacity -&gt; toString());
+		}
+		if (not r.title.oclIsUndefined()) {
+			elmt.children &lt;- thisModule.Attribute('title', r.title -&gt; toString());
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 18, 4 fragments, nominal size 31 lines, similarity 82%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 104 - 121 of ATL/ATL_Zoo/KM32OWL/KM32OWL/Transformations/OWL2XML.atl
+<pre>
+		do {
+			 for (s in c.subClassOf ) {
+		 		if (s.oclIsTypeOf(OWL!OWLClass))
+					thisModule.makeSubClass(c,s);
+		 		
+		 		if (s.oclIsTypeOf(OWL!UnionClass))
+					thisModule.makeSubClass(c,s);
+		 		
+				if (s.oclIsTypeOf(OWL!CardinalityRestriction))
+					thisModule.makeCardinalityRestrictionSubClass(c,s);
+				
+				if (s.oclIsTypeOf(OWL!MaxCardinalityRestriction))
+					thisModule.makeMaxCardinalityRestrictionSubClass(c,s);
+				
+				if (s.oclIsTypeOf(OWL!MinCardinalityRestriction))
+					thisModule.makeMinCardinalityRestrictionSubClass(c,s);
+			 }
+		}
+</pre>
+</td></tr>
+<tr><td>
+Lines 149 - 163 of ATL/ATL_Zoo/UML2OWL/UML2OWL/OWL/XmlSyntax/OWL2XML.atl
+<pre>
+		do {
+			 for (s in c.subClassOf ) {
+		 		if (s.oclIsKindOf(OWL!OWLClass))
+					thisModule.makeSubClass(c,s);
+				
+				if (s.oclIsTypeOf(OWL!CardinalityRestriction))
+					thisModule.makeCardinalityRestrictionSubClass(c,s);
+				
+				if (s.oclIsTypeOf(OWL!MaxCardinalityRestriction))
+					thisModule.makeMaxCardinalityRestrictionSubClass(c,s);
+				
+				if (s.oclIsTypeOf(OWL!MinCardinalityRestriction))
+					thisModule.makeMinCardinalityRestrictionSubClass(c,s);
+			 }
+		}
+</pre>
+</td></tr>
+<tr><td>
+Lines 149 - 163 of ATL/ATL_Zoo/KM32OWL/KM32OWL/Transformations/OWL2XML.atl
+<pre>
+		do {
+			 for (s in c.subClassOf ) {
+		 		if (s.oclIsKindOf(OWL!OWLClass))
+					thisModule.makeSubClass(c,s);
+				
+				if (s.oclIsTypeOf(OWL!CardinalityRestriction))
+					thisModule.makeCardinalityRestrictionSubClass(c,s);
+				
+				if (s.oclIsTypeOf(OWL!MaxCardinalityRestriction))
+					thisModule.makeMaxCardinalityRestrictionSubClass(c,s);
+				
+				if (s.oclIsTypeOf(OWL!MinCardinalityRestriction))
+					thisModule.makeMinCardinalityRestrictionSubClass(c,s);
+			 }
+		}
+</pre>
+</td></tr>
+<tr><td>
+Lines 104 - 121 of ATL/ATL_Zoo/UML2OWL/UML2OWL/OWL/XmlSyntax/OWL2XML.atl
+<pre>
+		do {
+			 for (s in c.subClassOf ) {
+		 		if (s.oclIsTypeOf(OWL!OWLClass))
+					thisModule.makeSubClass(c,s);
+		 		
+		 		if (s.oclIsTypeOf(OWL!UnionClass))
+					thisModule.makeSubClass(c,s);
+		 		
+				if (s.oclIsTypeOf(OWL!CardinalityRestriction))
+					thisModule.makeCardinalityRestrictionSubClass(c,s);
+				
+				if (s.oclIsTypeOf(OWL!MaxCardinalityRestriction))
+					thisModule.makeMaxCardinalityRestrictionSubClass(c,s);
+				
+				if (s.oclIsTypeOf(OWL!MinCardinalityRestriction))
+					thisModule.makeMinCardinalityRestrictionSubClass(c,s);
+			 }
+		}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 19, 6 fragments, nominal size 14 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 295 - 303 of ATL/ATL_Zoo/KM32OWL/KM32OWL/Transformations/OWL2XML.atl
+<pre>
+		do {
+			if (not o.OWLInverseOf.oclIsUndefined())
+				thisModule.addInverse(o);
+			
+			for (s in o.subPropertyOf ) {
+		 		if (s.oclIsKindOf(OWL!OWLObjectProperty))
+					thisModule.makeSubProperty(o,s);
+			}
+		}
+</pre>
+</td></tr>
+<tr><td>
+Lines 404 - 412 of ATL/ATL_Zoo/UML2OWL/UML2OWL/OWL/XmlSyntax/OWL2XML.atl
+<pre>
+		do {
+			if (not o.OWLInverseOf.oclIsUndefined())
+				thisModule.addInverse(o);
+			
+			for (s in o.subPropertyOf ) {
+		 		if (s.oclIsKindOf(OWL!OWLObjectProperty))
+					thisModule.makeSubProperty(o,s);
+			}
+		}
+</pre>
+</td></tr>
+<tr><td>
+Lines 295 - 303 of ATL/ATL_Zoo/UML2OWL/UML2OWL/OWL/XmlSyntax/OWL2XML.atl
+<pre>
+		do {
+			if (not o.OWLInverseOf.oclIsUndefined())
+				thisModule.addInverse(o);
+			
+			for (s in o.subPropertyOf ) {
+		 		if (s.oclIsKindOf(OWL!OWLObjectProperty))
+					thisModule.makeSubProperty(o,s);
+			}
+		}
+</pre>
+</td></tr>
+<tr><td>
+Lines 361 - 369 of ATL/ATL_Zoo/UML2OWL/UML2OWL/OWL/XmlSyntax/OWL2XML.atl
+<pre>
+		do {
+			if (not o.OWLInverseOf.oclIsUndefined())
+				thisModule.addInverse(o);
+			
+			for (s in o.subPropertyOf ) {
+		 		if (s.oclIsKindOf(OWL!OWLObjectProperty))
+					thisModule.makeSubProperty(o,s);
+			}
+		}
+</pre>
+</td></tr>
+<tr><td>
+Lines 406 - 414 of ATL/ATL_Zoo/KM32OWL/KM32OWL/Transformations/OWL2XML.atl
+<pre>
+		do {
+			if (not o.OWLInverseOf.oclIsUndefined())
+				thisModule.addInverse(o);
+			
+			for (s in o.subPropertyOf ) {
+		 		if (s.oclIsKindOf(OWL!OWLObjectProperty))
+					thisModule.makeSubProperty(o,s);
+			}
+		}
+</pre>
+</td></tr>
+<tr><td>
+Lines 362 - 370 of ATL/ATL_Zoo/KM32OWL/KM32OWL/Transformations/OWL2XML.atl
+<pre>
+		do {
+			if (not o.OWLInverseOf.oclIsUndefined())
+				thisModule.addInverse(o);
+			
+			for (s in o.subPropertyOf ) {
+		 		if (s.oclIsKindOf(OWL!OWLObjectProperty))
+					thisModule.makeSubProperty(o,s);
+			}
+		}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 20, 9 fragments, nominal size 26 lines, similarity 75%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 121 - 135 of ATL/ATL_Zoo/KM32OWL/KM32OWL/Transformations/KM32OWL.atl
+<pre>
+	do {
+		
+		if ( ( f.upper = 1) and ( f.lower = 1) )
+			thisModule.FunctionalProperty( f );
+		
+		if ( f.upper = f.lower )  -- [n-n]
+			thisModule.addCardinalityRestriction( f );
+		else
+			if (( f.upper = 0-1 ) and ( f.lower &gt;= 0 )) -- [*]
+				thisModule.addMinCardinalityRestriction( f );
+			else  { -- [m-n]
+				thisModule.addMinCardinalityRestriction( f );
+				thisModule.addMaxCardinalityRestriction( f );
+			}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 382 - 396 of ATL/ATL_Zoo/UML2OWL/UML2OWL/UML2OWL.atl
+<pre>
+	do {
+	
+		if ( ( p.upper = 1) and ( p.lower = 1) )
+			thisModule.addFunctionalProperty( p );
+		if ( p.upper = p.lower )  -- [n-n]
+				thisModule.addCardinality( p, inverse.type );
+			else
+				if (( p.upper = 0-1 ) and ( p.lower &gt;= 0 )) -- [*]
+					thisModule.addMinCardinality( p, inverse.type );
+				else  {-- [m-n]
+					thisModule.addMinCardinality( p, inverse.type );
+					thisModule.addMaxCardinality( p, inverse.type );
+				}
+		
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 334 - 347 of ATL/ATL_Zoo/UML2OWL/UML2OWL/UML2OWL.atl
+<pre>
+	do {
+		if ( ( p.upper = 1) and ( p.lower = 1) )
+				thisModule.addFunctionalProperty( p );
+		if ( p.upper = p.lower )  -- [n-n]
+				thisModule.addCardinality( p, inverse.type );
+			else
+				if (( p.upper = 0-1 ) and ( p.lower &gt;= 0 )) -- [*]
+					thisModule.addMinCardinality( p, inverse.type );
+				else  {-- [m-n]
+					thisModule.addMinCardinality( p, inverse.type );
+					thisModule.addMaxCardinality( p, inverse.type );
+				}
+		
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 248 - 261 of ATL/ATL_Zoo/UML2OWL/UML2OWL/UML2OWL.atl
+<pre>
+	do {
+		if ( ( p.upper = 1) and ( p.lower = 1) )
+				thisModule.addFunctionalProperty( p );
+		if ( p.upper = p.lower )  -- [n-n]
+				thisModule.addCardinality( p, p.class );
+			else
+				if (( p.upper = 0-1 ) and ( p.lower &gt;= 0 )) -- [*]
+					thisModule.addMinCardinality( p, p.class );
+				else  {-- [m-n]
+					thisModule.addMinCardinality( p, p.class );
+					thisModule.addMaxCardinality( p, p.class );
+				}
+		
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 148 - 168 of ATL/ATL_Zoo/KM32OWL/KM32OWL/Transformations/KM32OWL.atl
+<pre>
+	do {
+		
+		if ( f.isSymmetric() )
+			thisModule.SymmetricProperty( f );
+		
+		if ( f.isInverseFunctional() )
+			thisModule.InverseFunctionalProperty( f );
+		
+		if ( ( f.upper = 1) and ( f.lower = 1) )
+				thisModule.FunctionalProperty( f );
+		
+		if ( f.upper = f.lower )  -- [n-n]
+				thisModule.addCardinalityRestriction( f );
+			else
+				if (( f.upper = 0-1 ) and ( f.lower &gt;= 0 )) -- [*]
+					thisModule.addMinCardinalityRestriction( f );
+				else  {-- [m-n]
+					thisModule.addMinCardinalityRestriction( f );
+					thisModule.addMaxCardinalityRestriction( f );
+				}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 430 - 444 of ATL/ATL_Zoo/UML2OWL/UML2OWL/UML2OWL.atl
+<pre>
+	do {
+	
+		if ( ( p.upper = 1) and ( p.lower = 1) )
+			thisModule.addFunctionalProperty( p );
+		if ( p.upper = p.lower )  -- [n-n]
+				thisModule.addCardinality( p, inverse.type );
+			else
+				if (( p.upper = 0-1 ) and ( p.lower &gt;= 0 )) -- [*]
+					thisModule.addMinCardinality( p, inverse.type );
+				else  {-- [m-n]
+					thisModule.addMinCardinality( p, inverse.type );
+					thisModule.addMaxCardinality( p, inverse.type );
+				}
+		
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 474 - 487 of ATL/ATL_Zoo/UML2OWL/UML2OWL/UML2OWL.atl
+<pre>
+	do {
+		if ( ( p.upper = 1) and ( p.lower = 1) )
+				thisModule.addFunctionalProperty( p );
+		if ( p.upper = p.lower )  -- [n-n]
+				thisModule.addCardinality( p, p.class );
+			else
+				if (( p.upper = 0-1 ) and ( p.lower &gt;= 0 )) -- [*]
+					thisModule.addMinCardinality( p, p.class );
+				else  {-- [m-n]
+					thisModule.addMinCardinality( p, p.class );
+					thisModule.addMaxCardinality( p, p.class );
+				}
+		
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 187 - 201 of ATL/ATL_Zoo/KM32OWL/KM32OWL/Transformations/KM32OWL.atl
+<pre>
+	do {
+		
+		if ( ( a.upper = 1) and ( a.lower = 1) )
+				thisModule.FunctionalProperty( a );
+		
+		if ( a.upper = a.lower )  -- [n-n]
+				thisModule.addCardinalityRestriction( a );
+			else
+				if (( a.upper = 0-1 ) and ( a.lower &gt;= 0 )) -- [*]
+					thisModule.addMinCardinalityRestriction( a );
+				else  {-- [m-n]
+					thisModule.addMinCardinalityRestriction( a );
+					thisModule.addMaxCardinalityRestriction( a );
+				}	
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 219 - 229 of ATL/ATL_Zoo/UML2OWL/UML2OWL/UML2OWL.atl
+<pre>
+		do {
+			if ( p.upper = p.lower )  -- [n-n]
+				thisModule.addCardinalityRestriction( p );
+			else
+				if (( p.upper = 0-1 ) and ( p.lower &gt;= 0 )) -- [*]
+					thisModule.addMinCardinalityRestriction( p );
+				else  { -- [m-n]
+					thisModule.addMinCardinalityRestriction( p );
+					thisModule.addMaxCardinalityRestriction( p );
+				}
+		}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 21, 1 fragments, nominal size 35 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 173 - 198 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/Table2SVGPieChart.atl
+<pre>
+	do {
+		if (thisModule.allValidTables-&gt;size() &gt; 0) {
+			thisModule.svgFile &lt;- svgFile;
+			thisModule.svgFile.tag.viewBox &lt;- '0 0 ' +
+				width.toString() + ' ' + height.toString();
+
+			for (table in thisModule.allValidTables) {
+				for (elmtName in table.rows-&gt;seqWithoutFirst()-&gt;
+					collect(r|r.cells-&gt;first().content)-&gt;sortedBy(n|n)) {
+					thisModule.ColorByElementName &lt;-
+						thisModule.ColorByElementName.including(elmtName,
+							thisModule.computeColor(table.rows-&gt;seqWithoutFirst()-&gt;
+								collect(r|r.cells-&gt;first().content)-&gt;
+									sortedBy(n|n)-&gt;indexOf(elmtName),
+										table.rows-&gt;seqWithoutFirst()-&gt;
+											collect(r|r.cells-&gt;first().content)-&gt;
+												sortedBy(n|n)-&gt;size()));
+				}
+				
+				for (cell in table.rows-&gt;first().cells-&gt;seqWithoutFirst()) {
+					thisModule.Table2PieChart(table,
+						table.rows-&gt;first().cells-&gt;indexOf(cell));
+				}
+			}
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 22, 2 fragments, nominal size 20 lines, similarity 80%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 120 - 132 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/SVG2XML.atl
+<pre>
+	do {
+		if (not g.fill.oclIsUndefined()) {
+			if (g.fill &lt;&gt; 'black') {
+				elmt.children &lt;- thisModule.Attribute('fill', g.fill);
+			}
+		}
+		if (transforms-&gt;notEmpty()) {
+			if (transformValue &lt;&gt; '') {
+				elmt.children &lt;- thisModule.Attribute('transform',
+					transformValue);
+			}
+		}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 230 - 241 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/SVG2XML.atl
+<pre>
+	do {
+		if (not path.fill.oclIsUndefined()) {
+			if (path.fill &lt;&gt; 'black') {
+				elmt.children &lt;- thisModule.Attribute('fill', path.fill);
+			}
+		}
+		if (not path.stroke.oclIsUndefined()) {
+			if (path.stroke &lt;&gt; 'none') {
+				elmt.children &lt;- thisModule.Attribute('stroke', path.stroke);
+			}
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 23, 3 fragments, nominal size 39 lines, similarity 72%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 154 - 177 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/SVG2XML.atl
+<pre>
+	do {
+		if (not rect.position.oclIsUndefined()) {
+			if (rect.position.x.notNull()) {
+				elmt.children &lt;- thisModule.Attribute('x',
+					rect.position.x.toString());
+			}
+		}
+		if (not rect.position.oclIsUndefined()) {
+			if (rect.position.y.notNull()) {
+				elmt.children &lt;- thisModule.Attribute('y',
+					rect.position.y.toString());
+			}
+		}
+		if (not rect.fill.oclIsUndefined()) {
+			if (rect.fill &lt;&gt; 'black') {
+				elmt.children &lt;- thisModule.Attribute('fill', rect.fill);
+			}
+		}
+		if (not rect.stroke.oclIsUndefined()) {
+			if (rect.stroke &lt;&gt; 'none') {
+				elmt.children &lt;- thisModule.Attribute('stroke', rect.stroke);
+			}
+		}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 194 - 217 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/SVG2XML.atl
+<pre>
+	do {
+		if (not circ.position.oclIsUndefined()) {
+			if (circ.position.x.notNull()) {
+				elmt.children &lt;- thisModule.Attribute('x',
+					circ.position.x.toString());
+			}
+		}
+		if (not circ.position.oclIsUndefined()) {
+			if (circ.position.y.notNull()) {
+				elmt.children &lt;- thisModule.Attribute('y',
+					circ.position.y.toString());
+			}
+		}
+		if (not circ.fill.oclIsUndefined()) {
+			if (circ.fill &lt;&gt; 'black') {
+				elmt.children &lt;- thisModule.Attribute('fill', circ.fill);
+			}
+		}
+		if (not circ.stroke.oclIsUndefined()) {
+			if (circ.stroke &lt;&gt; 'none') {
+				elmt.children &lt;- thisModule.Attribute('stroke', circ.stroke);
+			}
+		}
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 257 - 288 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/SVG2XML.atl
+<pre>
+	do {
+		if (not text.position.oclIsUndefined()) {
+			if (text.position.x.notNull()) {
+				elmt.children &lt;- thisModule.Attribute('x',
+					text.position.x.toString());
+			}
+		}
+		if (not text.position.oclIsUndefined()) {
+			if (text.position.y.notNull()) {
+				elmt.children &lt;- thisModule.Attribute('y',
+					text.position.y.toString());
+			}
+		}
+		if (not text.stroke.oclIsUndefined()) {
+			if (text.stroke &lt;&gt; 'none') {
+				elmt.children &lt;- thisModule.Attribute('stroke', text.stroke);
+			}
+		}
+		if (not text.fontSize.oclIsUndefined()) {
+			if (text.fontSize &lt;&gt; 'medium') {
+				elmt.children &lt;- thisModule.Attribute('font-size',
+					text.fontSize);
+			}
+		}
+		--@comments text-anchor value stored in lengthAdjust attribute
+		if (not text.lengthAdjust.oclIsUndefined()) {
+			if (text.lengthAdjust &lt;&gt; 'start') {
+				elmt.children &lt;- thisModule.Attribute('text-anchor',
+					text.lengthAdjust);
+			}
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 24, 1 fragments, nominal size 300 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 52 - 151 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/UML22Measure.atl
+<pre>
+	do {
+		thisModule.root &lt;- root;
+		
+		if ((thisModule.measureLevel = #package) or
+			(thisModule.measureLevel = #class)) {
+			-- ==================================================
+			-- MOOD Metrics : Intra-Specification Level Metrics =
+			-- ==================================================
+			root.categories &lt;- thisModule.Category('MOOD',
+					'Metrics for Object-Oriented Design');
+			thisModule.Metric('MOOD','AIF','Attributes Inheritance Factor');
+			thisModule.Metric('MOOD','OIF','Operations Inheritance Factor');
+			thisModule.Metric('MOOD','AHF','Attributes Hiding Factor');
+			thisModule.Metric('MOOD','OHF','Operations Hiding Factor');
+			thisModule.Metric('MOOD','BPF','Behavioral Polymorphism Factor');
+			thisModule.Metric('MOOD','CCF','Class Coupling Factor');
+			thisModule.Metric('MOOD','ICF','Internal Coupling Factor');
+				
+			-- ===================================================
+			-- MOOD2 Metrics : Intra-Specification Level Metrics =
+			-- ===================================================
+			root.categories &lt;- thisModule.Category('MOOD2',
+				'Metrics for Object-Oriented Design 2');
+			thisModule.Metric('MOOD2','IIF','Internal Inheritance Factor');
+			thisModule.Metric('MOOD2','AHEF',
+				'Attributes Hiding Effectiveness Factor');
+			thisModule.Metric('MOOD2','OHEF',
+				'Operations Hiding Effectiveness Factor');
+		}
+		
+		if (thisModule.measureLevel = #class) {
+			-- ===============
+			-- MOOSE Metrics =
+			-- ===============
+			root.categories &lt;- thisModule.Category('MOOSE',
+				'Metrics for Object-Oriented Software Engineering');
+			thisModule.Metric('MOOSE','DIT','Depth of Inheritance Tree');
+			thisModule.Metric('MOOSE','NOC','Number of Children');
+			thisModule.Metric('MOOSE','CBO','Coupling Between Objects');
+			thisModule.Metric('MOOSE','RFC','Response for a Class');
+		
+			-- ================
+			-- EMOOSE Metrics =
+			-- ================
+			root.categories &lt;- thisModule.Category('EMOOSE','Extended MOOSE');
+			thisModule.Metric('EMOOSE','SIZE2','Number of local Attributes ' +
+				'and Operations defined in the Class');
+		}
+		
+		if ((thisModule.measureLevel = #package) or
+			(thisModule.measureLevel = #class)) {
+			-- ===============
+			-- QMOOD Metrics =
+			-- ===============
+			root.categories &lt;- thisModule.Category('QMOOD',
+				'Quality Model for Object-Oriented Design');
+			thisModule.Metric('QMOOD','DSC','Design Size in Classes');
+			thisModule.Metric('QMOOD','NOH','Number of Hierarchies');
+			thisModule.Metric('QMOOD','NIC','Number of Independent Classes');
+			thisModule.Metric('QMOOD','NSI','Number of Single Inheritance');
+			thisModule.Metric('QMOOD','NNC','Number of Internal Classes');
+			thisModule.Metric('QMOOD','NAC','Number of Abstract Classes');
+			thisModule.Metric('QMOOD','NLC','Number of Leaf Classes');
+			thisModule.Metric('QMOOD','ADI','Average Depth of Inheritance');
+			thisModule.Metric('QMOOD','AWI','Average Width of Inheritance');
+			thisModule.Metric('QMOOD','ANA','Average Number of Ancestors');
+		}			
+		
+		if (thisModule.measureLevel = #class) {
+			thisModule.Metric('QMOOD','MFA',
+				'Measure of Functional Abstraction');
+			thisModule.Metric('QMOOD','MAA','Measure of Attribute Abstraction');
+			thisModule.Metric('QMOOD','MAT','Measure of Abstraction');
+			thisModule.Metric('QMOOD','MOA','Measure of Aggregation');
+			thisModule.Metric('QMOOD','MRM','Modeled Relationship Measure');
+			thisModule.MetricWithPreferredValue('QMOOD','DAM','Data Access Metric','&gt;75');
+			thisModule.MetricWithPreferredValue('QMOOD','OAM','Operation Access Metric','&gt;75');
+			thisModule.MetricWithPreferredValue('QMOOD','MAM','Member Access Metric','&gt;75');
+			thisModule.Metric('QMOOD','NOA','Number of Ancestors');
+			thisModule.Metric('QMOOD','NOM','Number of Methods');
+			thisModule.Metric('QMOOD','CIS','Class Interface Size');
+			thisModule.Metric('QMOOD','NPT','Number of Unique Parameter Types');
+			thisModule.Metric('QMOOD','NPM','Number of Parameters per Method');
+			thisModule.Metric('QMOOD','NOD','Number of Attributes');
+			thisModule.Metric('QMOOD','NAD','Number of Abstract Data Types');
+			thisModule.Metric('QMOOD','NPA','Number of Public Attributes');
+			thisModule.Metric('QMOOD','CSM','Class Size Metric');
+			thisModule.Metric('QMOOD','CAM','Cohesion Among Methods of Class');
+			thisModule.Metric('QMOOD','DCC','Direct Class Coupling');
+			thisModule.Metric('QMOOD','MCC','Maximum Class Coupling');
+			thisModule.Metric('QMOOD','DAC','Direct Attribute Based Coupling');
+			thisModule.Metric('QMOOD','DPC','Direct Parameter Based Coupling');
+			thisModule.Metric('QMOOD','MPC','Maximum Parameter Based Coupling');
+			thisModule.Metric('QMOOD','CCD','Class Complexity Based on Data');
+			thisModule.Metric('QMOOD','CCP',
+				'Class Complexity Based on Method Parameters');
+			thisModule.Metric('QMOOD','CCM',
+				'Class Complexity Based on Members');
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 25, 1 fragments, nominal size 157 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 235 - 278 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/UML22Measure.atl
+<pre>
+	do {
+		-- ===============
+		-- MOOSE Metrics =
+		-- ===============
+		ms.measures &lt;- thisModule.IntegerMeasure('DIT',ne.DIT());
+		ms.measures &lt;- thisModule.IntegerMeasure('NOC',ne.NOC());
+		ms.measures &lt;- thisModule.IntegerMeasure('CBO',ne.CBO());
+		ms.measures &lt;- thisModule.IntegerMeasure('RFC',ne.RFC());
+	
+		-- ================
+		-- EMOOSE Metrics =
+		-- ================
+		ms.measures &lt;- thisModule.IntegerMeasure('SIZE2',ne.SIZE2());
+		
+		-- ===============
+		-- QMOOD Metrics =
+		-- ===============
+		ms.measures &lt;- thisModule.PercentageMeasure('MFA',ne.MFA());
+		ms.measures &lt;- thisModule.PercentageMeasure('MAA',ne.MAA());
+		ms.measures &lt;- thisModule.PercentageMeasure('MAT',ne.MAT());
+		ms.measures &lt;- thisModule.IntegerMeasure('MOA',ne.MOA());
+		ms.measures &lt;- thisModule.IntegerMeasure('MRM',ne.MRM());
+		ms.measures &lt;- thisModule.PercentageMeasure('DAM',ne.DAM());
+		ms.measures &lt;- thisModule.PercentageMeasure('OAM',ne.OAM());
+		ms.measures &lt;- thisModule.PercentageMeasure('MAM',ne.MAM());
+		ms.measures &lt;- thisModule.IntegerMeasure('NOA',ne.NOA());
+		ms.measures &lt;- thisModule.IntegerMeasure('NOM',ne.NOM());
+		ms.measures &lt;- thisModule.IntegerMeasure('CIS',ne.CIS());
+		ms.measures &lt;- thisModule.IntegerMeasure('NPT',ne.NPT());
+		ms.measures &lt;- thisModule.DoubleMeasure('NPM',ne.NPM());
+		ms.measures &lt;- thisModule.IntegerMeasure('NOD',ne.NOD());
+		ms.measures &lt;- thisModule.IntegerMeasure('NAD',ne.NAD());
+		ms.measures &lt;- thisModule.IntegerMeasure('NPA',ne.NPA());
+		ms.measures &lt;- thisModule.IntegerMeasure('CSM',ne.CSM());
+		ms.measures &lt;- thisModule.DoubleMeasure('CAM',ne.CAM());
+		ms.measures &lt;- thisModule.IntegerMeasure('DCC',ne.DCC());
+		ms.measures &lt;- thisModule.IntegerMeasure('MCC',ne.MCC());
+		ms.measures &lt;- thisModule.IntegerMeasure('DAC',ne.DAC());
+		ms.measures &lt;- thisModule.IntegerMeasure('DPC',ne.DPC());
+		ms.measures &lt;- thisModule.IntegerMeasure('MPC',ne.MPC());
+		ms.measures &lt;- thisModule.IntegerMeasure('CCD',ne.CCD());
+		ms.measures &lt;- thisModule.IntegerMeasure('CCP',ne.CCP());
+		ms.measures &lt;- thisModule.IntegerMeasure('CCM',ne.CCM());
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 26, 1 fragments, nominal size 24 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 17 - 27 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        for (inline in inlines) {            
+            if (inline.oclIsKindOf(XHTML!CDATA))
+                seq &lt;- seq-&gt;append(thisModule.Text(inline.value));
+            else if (inline.oclIsKindOf(XHTML!PCDATA))
+                seq &lt;- seq-&gt;union(thisModule.inlines(inline.inlines));
+            else
+                seq &lt;- seq-&gt;append(inline);
+        }
+        seq;
+    }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 27, 5 fragments, nominal size 26 lines, similarity 74%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 43 - 52 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+	do {
+        -- Local attributes and references
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        xml.children &lt;- thisModule.Attribute('xmlns', 'http://www.w3.org/1999/xhtml');
+--        xml.children &lt;- thisModule.Attribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instannce');
+--        xml.children &lt;- thisModule.Attribute('xsi:schemaLocation', 'http://www.w3.org/MarkUp/SCHEMMA/xhtml11.xsd');
+    	-- Inherited from Internationalization super-class
+		if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', html.xmlllang.value);
+		if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 69 - 76 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Local attributes and references
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.profile.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('profile', html..profile.value);
+        -- Inherited from Internationalization super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 87 - 93 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Local attributes and references
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        -- Inherited from Internationalization super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 519 - 525 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 184 - 191 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Local attributes and references
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.charset.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('charset', html..charset.value);
+        xml.children &lt;- thisModule.Attribute('type', html.type.value);
+        if (not html.src.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('src', html.src.valuue);
+        if (not html.defer.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('defer', html.defeer.value);
+    }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 28, 2 fragments, nominal size 42 lines, similarity 75%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 103 - 113 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Local attributes and references
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.httpequiv.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('http-equiv',  html.httpequiv.value);
+        if (not html.name.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('name', html.name.vvalue);
+        if (not html.content.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('content', html..content.value);
+        if (not html.scheme.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('scheme', html.sccheme.value);
+        -- Inherited from Internationalization super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 161 - 170 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Local attributes and references
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        xml.children &lt;- thisModule.Attribute('type', html.type.value);
+        if (not html.media.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('media', html.mediia.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+    }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 29, 21 fragments, nominal size 114 lines, similarity 72%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 123 - 150 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Local attributes and references
+        if (not html.charset.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('charset', html..charset.value);
+        if (not html.href.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('href', html.href.vvalue);
+        if (not html.hreflang.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('hreflang', htmml.hreflang.value);
+        if (not html.type.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('type', html.type.vvalue);
+        if (not html.rel.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('rel', html.rel.valuue);
+        if (not html.rev.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('rev', html.rev.valuue);
+        if (not html.media.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('media', html.mediia.value);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 725 - 746 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Local attributes and references
+        if (not html.accesskey.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('accesskey', hhtml.accesskey.value);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 876 - 901 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from CellHAlign super-class
+        if (not (html.align = #left)) xml.children &lt;- thisModule.Attribute('align', html.align);
+        if (not html.charoff.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('charoff', html..charoff.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+        -- Inherited from CellVAlign super-class
+        if (not (html.valign = #top)) xml.children &lt;- thisModule.Attribute('valign', html.valign);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 472 - 505 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Local attributes and references
+        if (not html.charset.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('charset', html..charset.value);
+        if (not html.type.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('type', html.type.vvalue);
+        if (not html.href.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('href', html.href.vvalue);
+        if (not html.hreflang.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('hreflang', htmml.hreflang.value);
+        if (not html.rel.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('rel', html.rel.valuue);
+        if (not html.rev.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('rev', html.rev.valuue);
+        if (not (html.shape = #rect)) xml.children &lt;- thisModule.Attribute('shape', html.shape);
+        if (not html.coords.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('coords', html.cooords.value);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+        -- Inherited from Focus super-class
+        if (not html.accesskey.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('accesskey', hhtml.accesskey.value);
+        if (not html.tabindex.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('tabindex', htmml.tabindex.value);
+        if (not html.onfocus.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onfocus', html..onfocus.value);
+        if (not html.onblur.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onblur', html.onnblur.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 604 - 631 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Local attributes and references
+        xml.children &lt;- thisModule.Attribute('src', html.src.value); 
+        xml.children &lt;- thisModule.Attribute('alt', html.alt.value); 
+        if (not html.longdesc.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('longdesc', htmml.longdesc.value); 
+        if (not html.height.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('height', html.heeight.value); 
+        if (not html.width.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('width', html.widtth.value); 
+        if (not html.usemap.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('usemap', html.ussemap.value);
+        if (html.ismap) xml.children &lt;- thisModule.Attribute('ismap', 'ismap');
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 916 - 946 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Local attributes and references
+        if (not html.abbr.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('abbr', html.abbr.vvalue);
+        if (not html.headers.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('headers', html..headers.value);
+        if (not (html.scope = #none)) xml.children &lt;- thisModule.Attribute('scope', html.scope);
+        if (not html.rowspan.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('rowspan', html..rowspan.value);
+        if (not html.colspan.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('colspan', html..colspan.value);
+        -- Inherited from CellHAlign super-class        if (not (html.align = #left)) xml.children &lt;&lt;- thisModule.Attribute('align', html.align);
+        if (not html.charoff.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('charoff', html..charoff.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+        -- Inherited from CellVAlign super-class
+        if (not (html.valign = #top)) xml.children &lt;- thisModule.Attribute('valign', html.valign);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 765 - 792 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Local attributes and references
+        if (not html.summary.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('summary', html..summary.value); 
+        if (not html.width.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('width', html.widtth.value); 
+        if (not html.border.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('border', html.boorder.value); 
+        if (not (html.frame = #void)) xml.children &lt;- thisModule.Attribute('frame', html.frame); 
+        if (not (html.rules = #none)) xml.children &lt;- thisModule.Attribute('rules', html.rules); 
+        if (not html.cellspacing.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('cellspacingg', html.cellspacing.value); 
+        if (not html.cellpadding.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('cellpaddingg', html.cellpadding.value); 
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 840 - 865 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from CellHAlign super-class
+        if (not (html.align = #left)) xml.children &lt;- thisModule.Attribute('align', html.align);
+        if (not html.charoff.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('charoff', html..charoff.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+        -- Inherited from CellVAlign super-class
+        if (not (html.valign = #top)) xml.children &lt;- thisModule.Attribute('valign', html.valign);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 236 - 258 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Local attributes and references
+        if (not html.onload.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onload', html.onnload.value);
+        if (not html.onunload.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onunload', htmml.onunload.value);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 303 - 322 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 695 - 714 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 803 - 822 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 371 - 390 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 341 - 360 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 269 - 288 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 404 - 423 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 438 - 457 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 540 - 559 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 202 - 221 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 571 - 590 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 645 - 684 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/XHTML2XML.atl
+<pre>
+    do {
+        -- Inherited from CoreAttrs super-super-class
+        if (not html.id.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('id', html.id.value);
+        if (not html.class.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('class', html.classs.value);
+        if (not html.style.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('style', html.stylle.value);
+        if (not html.title.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('title', html.titlle.value);
+        -- Inherited from Internationalization super-super-class
+        if (not html."xmllang".oclIsUndefined()) xml.children &lt;- thisModule.Attribute('xml:lang', httml.xmllang.value);
+        if (not (html.dir = #ltr)) xml.children &lt;- thisModule.Attribute('dir', html.dir);
+        -- Local attributes and references
+		if (not (html.type = #text)) xml.children &lt;- thisModule.Attribute('type', html.type);
+        if (not html.name.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('name', html.name.vvalue);
+        if (not html.value.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('value', html.valuue.value);
+        if (html.checked) xml.children &lt;- thisModule.Attribute('checked', 'checked');
+        if (html.disabled) xml.children &lt;- thisModule.Attribute('disabled', 'disabled');
+        if (html.readonly) xml.children &lt;- thisModule.Attribute('readonly', 'readonly');
+        if (not html.size.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('size', html.size.vvalue);
+        if (not html.maxlength.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('maxlength', hhtml.maxlength.value);
+        if (not html.src.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('src', html.src.valuue);
+        if (not html.alt.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('alt', html.alt.valuue);
+        if (not html.usemap.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('usemap', html.ussemap.value);
+        if (not html.onselect.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onselect', htmml.onselect.value);
+        if (not html.onchange.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onchange', htmml.onchange.value);
+        if (not html.accept.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('accept', html.acccept.value);
+        -- Inherited from Events super-super-class
+        if (not html.onclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onclick', html..onclick.value);
+        if (not html.ondblclick.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('ondblclick',, html.ondblclick.value);
+        if (not html.onmousedown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousedownn', html.onmousedown.value);
+        if (not html.onmouseup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseup', hhtml.onmouseup.value);
+        if (not html.onmousemove.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmousemovee', html.onmousemove.value);
+        if (not html.onmouseout.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onmouseout',, html.onmouseout.value);
+        if (not html.onkeypress.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeypress',, html.onkeypress.value);
+        if (not html.onkeydown.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeydown', hhtml.onkeydown.value);
+        if (not html.onkeyup.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onkeyup', html..onkeyup.value);
+        -- Inherited from Focus super-class
+        if (not html.accesskey.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('accesskey', hhtml.accesskey.value);
+        if (not html.tabindex.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('tabindex', htmml.tabindex.value);
+        if (not html.onfocus.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onfocus', html..onfocus.value);
+        if (not html.onblur.oclIsUndefined()) xml.children &lt;- thisModule.Attribute('onblur', html.onnblur.value);
+    }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 30, 1 fragments, nominal size 19 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 149 - 162 of ATL/ATL_Zoo/ModelsMeasurement/ModelsMeasurement/transformations/Table2SVGBarChart.atl
+<pre>
+	do {					
+		if (thisModule.allValidTables-&gt;size() &gt; 0) {
+			thisModule.svgFile &lt;- svgFile;
+			thisModule.svgFile.tag.viewBox &lt;- '0 0 ' +
+				width.toString() + ' ' + height.toString();			
+					
+			for (table in thisModule.allValidTables) {
+				for (cell in table.rows-&gt;first().cells-&gt;seqWithoutFirst()) {
+					thisModule.Table2BarChart(table,
+						table.rows-&gt;first().cells-&gt;indexOf(cell));
+				}
+			}
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 31, 4 fragments, nominal size 7 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 21 - 23 of ATL/ATL_Zoo/ATL2Tracer/ATL2Tracer/TracerTest/Input/sample-ATL-0.2-Tracer.atl
+<pre>
+  do {
+    traceLink.refSetValue('sourceElements', Sequence {s});
+  }
+</pre>
+</td></tr>
+<tr><td>
+Lines 21 - 23 of ATL/ATL_Zoo/ATL2Tracer/ATL2Tracer/TracerTest/Output/sample-ATL-0.2-OUT.atl
+<pre>
+  do {
+    traceLink.refSetValue('sourceElements', Sequence {s});
+  }
+</pre>
+</td></tr>
+<tr><td>
+Lines 49 - 51 of ATL/ATL_Zoo/ATL2Tracer/ATL2Tracer/TracerTest/Input/sample-ATL-0.2-Tracer.atl
+<pre>
+  do {
+    traceLink.refSetValue('sourceElements', Sequence {s});
+  }
+</pre>
+</td></tr>
+<tr><td>
+Lines 49 - 51 of ATL/ATL_Zoo/ATL2Tracer/ATL2Tracer/TracerTest/Output/sample-ATL-0.2-OUT.atl
+<pre>
+  do {
+    traceLink.refSetValue('sourceElements', Sequence {s});
+  }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 32, 1 fragments, nominal size 60 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 69 - 115 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {		
+		if (not (allMetamodelMeasuresSets-&gt;isEmpty() and
+			allModelMeasuresSets-&gt;isEmpty() and
+				allPackageMeasuresSets-&gt;isEmpty() and
+					allInterfaceMeasuresSets-&gt;isEmpty() and
+						allClassMeasuresSets-&gt;isEmpty())) {
+			thisModule.html &lt;- thisModule.HTML();
+		
+			for (cat in root.categories) {
+				if (allMetamodelMeasuresSets-&gt;notEmpty()) {
+					if (allMetamodelMeasuresSets-&gt;
+							first().categories()-&gt;includes(cat)) {
+						thisModule.html.body.blocks-&gt;last().flows &lt;-
+							thisModule.TABLE(allMetamodelMeasuresSets,cat);
+					}
+				}
+				if (allModelMeasuresSets-&gt;notEmpty()) {
+					if (allModelMeasuresSets-&gt;
+							first().categories()-&gt;includes(cat)) {
+						thisModule.html.body.blocks-&gt;last().flows &lt;-
+							thisModule.TABLE(allModelMeasuresSets,cat);
+					}
+				}
+				if (allPackageMeasuresSets-&gt;notEmpty()) {
+					if (allPackageMeasuresSets-&gt;
+							first().categories()-&gt;includes(cat)) {
+						thisModule.html.body.blocks-&gt;last().flows &lt;-
+							thisModule.TABLE(allPackageMeasuresSets,cat);
+					}
+				}
+				if (allInterfaceMeasuresSets-&gt;notEmpty()) {
+					if (allInterfaceMeasuresSets-&gt;
+							first().categories()-&gt;includes(cat)) {
+						thisModule.html.body.blocks-&gt;last().flows &lt;-
+							thisModule.TABLE(allInterfaceMeasuresSets,cat);
+					}
+				}
+				if (allClassMeasuresSets-&gt;notEmpty()) {
+					if (allClassMeasuresSets-&gt;
+							first().categories()-&gt;includes(cat)) {
+						thisModule.html.body.blocks-&gt;last().flows &lt;-
+							thisModule.TABLE(allClassMeasuresSets,cat);
+					}
+				}
+			}
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 33, 2 fragments, nominal size 10 lines, similarity 80%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 494 - 500 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {
+		for (meas in allMeas) {
+			tr.trElements &lt;- thisModule.InputTextCell(meas);
+		}
+		
+		tr;
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 569 - 575 of ATL/ATL_Zoo/Measure2XHTML/Measure2XHTML/transformations/Measure2XHTML.atl
+<pre>
+	do {
+		if (not meas.matchPreferredValue()) {
+			td.class &lt;- thisModule.CDATA('ignoredValue');
+		}
+		
+		td;
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 34, 1 fragments, nominal size 13 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 680 - 684 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/AnyLogic2XML.atl
+<pre>
+	do {
+		for (e in uiProperties) {
+			e.children &lt;- Sequence{uipName-&gt;at(uiProperties.indexOf(e)),uipValue-&gt;at(uiProperties.indexOf(e)))};
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 35, 11 fragments, nominal size 15 lines, similarity 86%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 125 - 130 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'presetation' + thisModule.idCounter.toString();
+		else  o.name &lt;- o.name + '_presentation' + thisModule.idCounter.toString();
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 642 - 647 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'mergeNode' + thisModule.idCounter.toString();
+		else o.name &lt;- o.name   + thisModule.idCounter.toString();
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 741 - 746 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'sendSignalAction' + thisModule.idCounter.toString();
+		else o.name &lt;- o.name   + thisModule.idCounter.toString();
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 758 - 763 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'acceptEventAction' + thisModule.idCounter.toString();
+		else o.name &lt;- o.name   + thisModule.idCounter.toString();
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 724 - 729 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'action' + thisModule.idCounter.toString();
+		else o.name &lt;- o.name   + thisModule.idCounter.toString();
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 690 - 695 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'decisionNode' + thisModule.idCounter.toString();
+		else o.name &lt;- o.name   + thisModule.idCounter.toString();
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 533 - 538 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'connector' + thisModule.idCounter.toString();
+		else o.name &lt;- o.name + thisModule.idCounter.toString(); 
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 589 - 594 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'initialNode' + thisModule.idCounter.toString();
+		else o.name &lt;- o.name   + thisModule.idCounter.toString();
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 606 - 611 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'finalNode' + thisModule.idCounter.toString();
+		else o.name &lt;- o.name   + thisModule.idCounter.toString();
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 660 - 665 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'forkNode' + thisModule.idCounter.toString();
+		else o.name &lt;- o.name   + thisModule.idCounter.toString();
+	}
+</pre>
+</td></tr>
+<tr><td>
+Lines 624 - 629 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'joinNode' + thisModule.idCounter.toString();
+		else o.name &lt;- o.name   + thisModule.idCounter.toString();
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 36, 1 fragments, nominal size 18 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 353 - 360 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'DerivedSimulationModel';
+	
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		simulationExperiment.id &lt;- thisModule.idCounter;
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 37, 1 fragments, nominal size 54 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 463 - 485 of ATL/ATL_Zoo/UML2AnyLogic/UML2AnyLogic/Transformations/UML2AnyLogic.atl
+<pre>
+	do {
+		thisModule.idCounter &lt;- thisModule.idCounter + 1;
+		o.id &lt;- thisModule.idCounter;
+		if (o.name.size() = 0) o.name &lt;- 'Activity' + thisModule.idCounter.toString();
+		
+		for (e in cpus) {
+			thisModule.idCounter &lt;- thisModule.idCounter + 1;
+			e.id &lt;- thisModule.idCounter;
+			e.name &lt;- e.name + thisModule.idCounter.toString();
+		}
+		for (e in cpuVisuals) {
+			thisModule.idCounter &lt;- thisModule.idCounter + 1;
+			e.id &lt;- thisModule.idCounter;
+			e.name &lt;- e.name + thisModule.idCounter.toString();
+		}
+		for (e in cpuConnectors) {
+			thisModule.idCounter &lt;- thisModule.idCounter + 1;
+			e.id &lt;- thisModule.idCounter;
+			e.name &lt;- e.name + thisModule.idCounter.toString();
+			e.points &lt;- Sequence{pointSourceList-&gt;at(cpuConnectors-&gt;indexOf(e)),pointTargetList-&gt;at(cpuConnecctors-&gt;indexOf(e))};
+		}
+		
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 38, 1 fragments, nominal size 2 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 4155 - 4157 of ATL/ATL_Zoo/UMLClassDiagram_to_UMLProfile_v0.1/UMLClassDiagram_to_UMLProfile/Transformations/UML2Copy.atl
+<pre>
+	do {
+
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 39, 1 fragments, nominal size 15 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 123 - 127 of ATL/ATL_Zoo/UMLClassDiagram_to_UMLProfile_v0.1/UMLClassDiagram_to_UMLProfile/Transformations/UMLCD2UMLProfile.atl
+<pre>
+	do {
+		for	(elm in UML2!Property.allInstancesFrom('OUT')-&gt;select(e | e.name.startsWith('base_Element_')))) {
+			elm.type &lt;- thisModule.resolveTemp(UML2!Model.allInstancesFrom('IN')-&gt;any(e | e.oclIsTypeOf(UML2!!"uml::Model")), 'elementImport').importedElement;
+		}
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 40, 1 fragments, nominal size 8 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 38 - 40 of ATL/ATL_Zoo/SideEffect/SideEffect/Transformations/TypeA2TypeB_v2.atl
+<pre>
+	do {
+		thisModule.nameToAssignHistory &lt;- thisModule.nameToAssignHistory-&gt;append(Tuple {e = e, s = s});
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 41, 1 fragments, nominal size 6 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 49 - 53 of ATL/ATL_Zoo/SideEffect/SideEffect/Transformations/TypeA2TypeB_v2.atl
+<pre>
+	do {
+		-- The corresponding name for the current ElementB is added in the map.
+		-- This map will be used at the end of the transformation to create a link between ElementB and DeefinitionB
+		thisModule.NameToAssign(t, s.name);
+	}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 42, 1 fragments, nominal size 9 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 58 - 63 of ATL/ATL_Zoo/SideEffect/SideEffect/Transformations/TypeA2TypeB_v2.atl
+<pre>
+	do {
+		for(dta in thisModule.nameToAssignHistory) {
+			-- We create a link between an ElementB and the corresponding DefinitionB
+			dta.e.definition &lt;- TypeB!DefinitionB.allInstancesFrom('b')-&gt;any(e | e.name = dta.s);
+		}
+	}
+</pre>
+</td></tr>
+</table>
+</body>
+</html>
